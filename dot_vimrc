@@ -77,8 +77,13 @@ Plug 'xolox/vim-colorscheme-switcher'
 Plug 'gruvbox-community/gruvbox'
 Plug 'preservim/nerdcommenter'
 Plug 'voldikss/vim-floaterm'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
+
+let g:fzf_preview_window = 'right:50%'
+let g:fzf_layout = { 'window': {'width': 0.9, 'height': 0.6 } }
 
 let mapleader = " "
 nnoremap <leader> :!
@@ -116,8 +121,10 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
 
-"practice mappings
+"function keys
 map <F2> :NERDTreeToggle<CR>
 map <F3> :!explorer.exe .<CR>
 map <F4> :FloatermToggle<CR>
 tmap <F4> <C-W>:FloatermToggle<CR>
+tmap <F6> <C-W>:FloatermKill<CR>
+map <F10> :q<CR>
